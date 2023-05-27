@@ -21,11 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,
-    resave: true,
+    resave: false,
     saveUninitialized: false,
-    cookie: {
-      maxAge: 20000,
-    },
+    //cookie: {
+    //  maxAge: 20000,
+    //},
     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
   })
 );
