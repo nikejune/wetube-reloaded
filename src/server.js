@@ -10,8 +10,7 @@ import { localMiddleware } from "./middlewares";
 const app = express();
 const logger = morgan("dev");
 const rootHander = (req, res) => {
-  console.log("sibal");
-  res.send("sex");
+  console.log("root handler");
 };
 
 app.set("view engine", "pug");
@@ -32,6 +31,7 @@ app.use(
 
 app.use(localMiddleware);
 app.use("/uploads", express.static("uploads"));
+app.use("/static", express.static("assets"));
 app.use("/", rootRouter);
 app.use("/users", userRouter);
 app.use("/videos", videoRouter);
