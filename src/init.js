@@ -5,7 +5,7 @@ import "./models/Video";
 import "./models/User";
 import "./models/Comment";
 import app from "./server";
-const PORT = "8000";
+const PORT = process.env.PORT || "8000";
 
 const listenHanlder = () => console.log("LISTEN");
 
